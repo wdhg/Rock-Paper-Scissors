@@ -8,6 +8,8 @@ PLAYER_WINS = ["rock vs scissors", "scissors vs paper", "paper vs rock"]
 wins = []
 # The amount of games the player has to win to win the whole game
 MINIMUM_GAMES = 2
+PLAYER = "Player"
+AI = "Ai"
 
 def get_choice():
     # Gets input from user and makes sure it is valid
@@ -31,14 +33,14 @@ def compare_choices(player_choice, ai_choice):
         # Else the ai wins
         if message in PLAYER_WINS:
             print("Player wins\n")
-            wins.append("Player")
+            wins.append(PLAYER)
         else:
             print("Ai wins\n")
-            wins.append("Ai")
+            wins.append(AI)
 
 def game_over():
     # If the player / ai has won the amount of required game
-    if wins.count("Player") == MINIMUM_GAMES:
+    if wins.count(PLAYER) == MINIMUM_GAMES:
         print("Player wins the game!")
         return True
     elif wins.count("Ai") == MINIMUM_GAMES:
