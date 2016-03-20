@@ -18,8 +18,7 @@ def get_choice():
         return choice
 
 def ai_choice():
-    # Returns a random choice from VALID_CHOICES
-    return VALID_CHOICES[math.floor(random.random() * len(VALID_CHOICES))]
+    return random.choice(VALID_CHOICES)
 
 # Compares choices to find who wins the round
 def compare_choices(player_choice, ai_choice):
