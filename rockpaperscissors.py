@@ -2,8 +2,12 @@ import random
 import math
 
 VALID_CHOICES = ["rock", "paper", "scissors"]
+# These are all the possible matches where the player wins
 PLAYER_WINS = ["rock vs scissors", "scissors vs paper", "paper vs rock"]
+# This will store the name of the person who won each game
 wins = []
+# The amount of games the player has to win to win the whole game
+MINIMUM_GAMES = 2
 
 def get_choice():
     # Gets input from user and makes sure it is valid
@@ -34,10 +38,11 @@ def compare_choices(player_choice, ai_choice):
             wins.append("Ai")
 
 def check_win():
-    if wins.count("Player") == 2:
+    # If the player / ai has won the amount of required game
+    if wins.count("Player") == MINIMUM_GAMES:
         print("Player wins the game!")
         return True
-    elif wins.count("Ai") == 2:
+    elif wins.count("Ai") == MINIMUM_GAMES:
         print("Ai wins the game!")
         return True
     return False
@@ -45,6 +50,7 @@ def check_win():
 def play():
     while True:
         if check_win():
+            # End the game
             break
         else:
             compare_choices(get_choice(), ai_choice())
