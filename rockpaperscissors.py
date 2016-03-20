@@ -43,7 +43,7 @@ def game_over():
     if wins.count(PLAYER) == MINIMUM_GAMES:
         print("Player wins the game!")
         return True
-    elif wins.count("Ai") == MINIMUM_GAMES:
+    elif wins.count(AI) == MINIMUM_GAMES:
         print("Ai wins the game!")
         return True
     return False
