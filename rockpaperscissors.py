@@ -7,7 +7,7 @@ PLAYER_WINS = ["rock vs scissors", "scissors vs paper", "paper vs rock"]
 # This will store the name of the person who won each game
 wins = []
 # The amount of games the player has to win to win the whole game
-MINIMUM_GAMES = 2
+MINIMUM_GAMES = int(input("Enter the minium number of games\n"))
 PLAYER = "Player"
 AI = "Ai"
 
@@ -29,8 +29,6 @@ def compare_choices(player_choice, ai_choice):
     if ai_choice == player_choice:
         print("Draw\n")
     else:
-        # If the message is in the list PLAYER_WINS, the player wins
-        # Else the ai wins
         if message in PLAYER_WINS:
             print("Player wins\n")
             wins.append(PLAYER)
