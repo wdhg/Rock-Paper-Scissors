@@ -36,7 +36,7 @@ def compare_choices(player_choice, ai_choice):
             print("Ai wins\n")
             wins.append("Ai")
 
-def check_win():
+def game_over():
     # If the player / ai has won the amount of required game
     if wins.count("Player") == MINIMUM_GAMES:
         print("Player wins the game!")
@@ -47,11 +47,7 @@ def check_win():
     return False
 
 def play():
-    while True:
-        if check_win():
-            # End the game
-            break
-        else:
-            compare_choices(get_choice(), ai_choice())
+    while not game_over():
+        compare_choices(get_choice(), ai_choice())
 
 play()
